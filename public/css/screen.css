@@ -41,7 +41,7 @@ body{font-family:'Josefin Sans Std Light',arial,serif;background:url(/images/bg.
 img.bg{position:absolute;left:0;bottom:0;width:100%;z-index:-1;}
 h1,h2,h3,h4,h5,h6{font-family:'Neucha',arial,serif;}
 #wrapper{width:960px;margin:25px auto;}
-header{height:75px;background:rgba(255, 255, 255, 0.25);}header h1{font-size:1.8em;padding:25px 0 0 35px;color:#000;text-shadow:#fff 1px 1px 1px;}
+header{height:200px;background:rgba(255, 255, 255, 0.25) url(/images/juggling.png);}header h1{font-size:2.4em;padding:70px 0 0 245px;color:#000;text-shadow:#fff 1px 1px 1px;}
 nav{height:25px;}nav ul li{display:block;float:left;height:25px;}nav ul li a{text-decoration:none;display:block;height:16px;margin-top:3px;padding:3px 6px;color:#000;}nav ul li a:hover{background:rgba(255, 255, 255, 0.5);color:#000;}
 nav ul li a.current{background:rgba(255, 255, 255, 0.75);color:#000;}
 section.body{background:rgba(255, 255, 255, 0.75);padding:25px 10px;}section.body h2{font-size:1.4em;}

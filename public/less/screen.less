@@ -10,7 +10,7 @@
 body{ font-family: 'Josefin Sans Std Light', arial, serif; background: url(/images/bg.jpg) repeat bottom left; }
 img.bg{ position: absolute; left: 0; bottom: 0; width: 100%; z-index: -1; }
 
-h1,h2,h3,h4,h5,h6{ font-family: 'Droid Serif', arial, serif; }
+h1,h2,h3,h4,h5,h6{ font-family: 'Neucha', arial, serif; }
 
 
 #wrapper{ width: 960px; margin: 25px auto; }
@@ -26,8 +26,8 @@ nav{ height: @nav_height; /*background: @nav_background_color;*/
       @top_margin: 3px;
       a{ text-decoration: none; display: block; height: @nav_height - @top_margin - (3px*2); margin-top: @top_margin; padding: 3px 6px;
         color: #000;
-        &:hover{ background: rgba(255,255,255, 0.75); color: #000; }
-        &.current{ background: rgba(255,255,255, 0.5); color: #000; }
+        &:hover{ background: rgba(255,255,255, 0.5); color: #000; }
+        &.current{ background: @body_background_color; color: #000; }
       }
     }
   }

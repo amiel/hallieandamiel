@@ -1,0 +1,47 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+nav ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0;}
+input,select{vertical-align:middle;}
+html{font-size:100%;}
+body{font-size:.875em;line-height:1.5;}
+code,kbd,pre,samp,tt{font-family:"andale mono",consolas,monaco,"lucida console","courier new",courier,monospace;line-height:1.3;}
+abbr,acronym,dfn{border-bottom:1px dotted;cursor:help;font-variant:normal;font-style:normal;}
+var{font-style:normal;}
+img{border:0;}
+ul{list-style:disc outside none;}
+ol{list-style:decimal outside none;}
+li{margin-left:2em;}
+li ul,li ol{margin-bottom:0;}
+dd{margin-bottom:1em;}
+ins{text-decoration:none;border-bottom:1px dotted;}
+textarea{text-align:left;line-height:1.25;}
+table{border-collapse:collapse;border-spacing:0;border:0;line-height:1.3;}
+caption,th,td{text-align:left;vertical-align:top;}
+th,td{border:1px solid;padding:.5em 1em;}
+caption{padding-bottom:1em;}
+h5,h6{font-size:1em;}
+em,i,blockquote,q,cite{font-style:italic;}
+strong,b,dt,th{font-weight:bold;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;margin-bottom:10px;}
+h1{font-size:3em;line-height:1.1;}
+h2{font-size:2em;line-height:1.15;}
+h3{font-size:1.5em;line-height:1.2;}
+h4{font-size:1.25em;line-height:1.25;}
+.js .js-hide{display:none;}
+body{font-family:'Josefin Sans Std Light',arial,serif;background:url(/images/bg.jpg) repeat bottom left;}
+img.bg{position:absolute;left:0;bottom:0;width:100%;z-index:-1;}
+h1,h2,h3,h4,h5,h6{font-family:'Droid Serif',arial,serif;}
+#wrapper{width:960px;margin:25px auto;}
+header{height:75px;background:rgba(255, 255, 255, 0.25);}header h1{font-size:1.8em;padding:25px 0 0 35px;color:#000;text-shadow:#fff 1px 1px 1px;}
+nav{height:25px;}nav ul li{display:block;float:left;height:25px;}nav ul li a{text-decoration:none;display:block;height:16px;margin-top:3px;padding:3px 6px;color:#000;}nav ul li a:hover{background:rgba(255, 255, 255, 0.75);color:#000;}
+nav ul li a.current{background:rgba(255, 255, 255, 0.5);color:#000;}
+section.body{background:rgba(255, 255, 255, 0.75);padding:25px 10px;}section.body h2{font-size:1.4em;}

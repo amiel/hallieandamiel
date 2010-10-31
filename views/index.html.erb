@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The Hallie and Amiel Celebration</title>
+
+  <script type="text/javascript">
+  	document.getElementsByTagName('html')[0].className += 'js';
+  </script>
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:regular&amp;subset=latin' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light&subset=latin' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/screen.css" type="text/css" />
+
+  <!--[if IE]>
+  	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 8]>
+  	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <img class="bg" src="/images/murphy_dome.jpg" />
+  <div id="wrapper">
+    <header>
+      <h1>The Hallie and Amiel Celebration</h1>
+    </header>
+  
+    <nav>
+      <ul>
+        <li><a href="#basic_information">Basic Information</a></li>
+        <li><a href="#where_to_stay">Where to Stay</a></li>
+      </ul>
+    </nav>
+    
+    <section class="body" id="basic_information">
+      <h2>Basic Information</h2>
+      
+      <dl>
+        <dt>When</dt>
+        <dd>July 23rd, 2011</dd>
+        
+        <dt>Where</dt>
+        <dd>Fairbanks, Alaska</dd>
+      </dl>
+    </section>
+
+    <section class="body js-hide" id="where_to_stay">
+      <h2>Where to Stay</h2>
+      <p>We'll be trying to find a few options in different price ranger for people to stay.</p>
+    </section>
+  
+  
+    
+  </div>  
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
+  
+  <script type="text/javascript" charset="utf-8">
+    $('nav ul').tabs('.body', { effect: 'fade', history: true, initialIndex: 0 });
+  </script>
+</body>
+</html>

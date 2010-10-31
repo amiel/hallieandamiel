@@ -2,7 +2,6 @@
 @import "_reset";
 
 @header_background_color: rgba(255,255,255, 0.25);
-@nav_background_color: rgba(0,0,0, 0.25);
 @body_background_color: rgba(255,255,255, 0.75);
 
 .js .js-hide{ display: none; }
@@ -15,19 +14,18 @@ h1,h2,h3,h4,h5,h6{ font-family: 'Neucha', arial, serif; }
 
 #wrapper{ width: 960px; margin: 25px auto; }
 
-header{ height: 200px; background: @header_background_color url(/images/juggling.png);
-  h1{ font-size: 2.4em; padding: 70px 0 0 245px; color: #000; text-shadow: #fff 1px 1px 1px; }
-}
-
 @nav_height: 25px;
-nav{ height: @nav_height; /*background: @nav_background_color;*/
-  ul{
-    li{ display: block; float: left; height: @nav_height;
-      @top_margin: 3px;
-      a{ text-decoration: none; display: block; height: @nav_height - @top_margin - (3px*2); margin-top: @top_margin; padding: 3px 6px;
-        color: #000;
-        &:hover{ background: rgba(255,255,255, 0.5); color: #000; }
-        &.current{ background: @body_background_color; color: #000; }
+
+header{ height: 200px; background: @header_background_color url(/images/juggling.png); position: relative;
+  h1{ font-size: 2.4em; padding: 70px 0 0 275px; color: #000; text-shadow: #fff 1px 1px 1px; }
+
+  nav{ height: @nav_height; position: absolute; bottom: 0;
+    ul{
+      li{ display: block; float: left; height: @nav_height;
+        a{ text-decoration: none; display: block; height: @nav_height - (3px*2); padding: 3px 6px; color: #000;
+          &:hover{ background: rgba(255,255,255, 0.45); }
+          &.current{ background: rgba(255,255,255, 0.65); }
+        }
       }
     }
   }

@@ -38,10 +38,10 @@ h3{font-size:1.5em;line-height:1.2;}
 h4{font-size:1.25em;line-height:1.25;}
 .js .js-hide{display:none;}
 body{font-family:'Josefin Sans Std Light',arial,serif;background:url(/images/bg.jpg) repeat bottom left;}
-img.bg{position:absolute;left:0;bottom:0;width:100%;z-index:-1;}
-h1,h2,h3,h4,h5,h6{font-family:'Neucha',arial,serif;}
+img.bg{position:absolute;left:0;bottom:0;width:100%;z-index:-1;position:fixed;}
+h1,h2,h3,h4,h5,h6{font-family:'Tangerine',arial,serif;}
 #wrapper{width:960px;margin:25px auto;}
-header{height:200px;background:rgba(255, 255, 255, 0.25) url(/images/juggling.png);position:relative;}header h1{font-size:2.4em;padding:70px 0 0 275px;color:#000;text-shadow:#fff 1px 1px 1px;}
-header nav{height:25px;position:absolute;bottom:0;}header nav ul li{display:block;float:left;height:25px;}header nav ul li a{text-decoration:none;display:block;height:19px;padding:3px 6px;color:#000;}header nav ul li a:hover{background:rgba(255, 255, 255, 0.45);}
+header{height:200px;background:rgba(255, 255, 255, 0.25) url(/images/juggling.png);position:relative;}header h1{font-size:3.2em;padding:70px 0 0 275px;color:#000;text-shadow:#fff 1px 1px 1px;}
+header nav{height:28px;position:absolute;bottom:0;}header nav ul li{display:block;float:left;height:28px;font-size:1.2em;letter-spacing:1px;}header nav ul li a{text-decoration:none;display:block;height:22px;padding:3px 6px;color:#000;}header nav ul li a:hover{background:rgba(255, 255, 255, 0.45);}
 header nav ul li a.current{background:rgba(255, 255, 255, 0.65);}
-section.body{background:rgba(255, 255, 255, 0.75);padding:25px 10px;}section.body h2{font-size:1.4em;}
+section.body{background:rgba(255, 255, 255, 0.75);padding:25px 10px;min-height:250px;}section.body h2{font-size:1.4em;}

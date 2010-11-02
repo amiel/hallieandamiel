@@ -8,8 +8,7 @@
   	document.getElementsByTagName('html')[0].className += 'js';
   </script>
 
-  <link href='http://fonts.googleapis.com/css?family=Neucha&subset=latin' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light&subset=latin' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine|Josefin+Sans+Std+Light' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/screen.css" type="text/css" />
 
   <!--[if IE]>
@@ -25,11 +24,12 @@
   <img class="bg" src="/images/murphy_dome.jpg" />
   <div id="wrapper">
     <header>
-      <h1>The Hallie and Amiel Celebration!!!</h1>
+      <h1>The Hallie and Amiel Wedding!!!</h1>
       <nav>
         <ul>
           <li><a href="#basic_information">Basic Information</a></li>
-          <li><a href="#where_to_stay">Where to Stay</a></li>
+          <li><a href="#lodging">Lodging</a></li>
+          <li><a href="#rvsp">RVSP / Survey</a></li>
         </ul>
       </nav>
     </header>
@@ -46,12 +46,37 @@
       </dl>
     </section>
 
-    <section class="body js-hide" id="where_to_stay">
-      <h2 class="js-hide">Where to Stay</h2>
-      <p>We'll be trying to find a few options in different price ranges for people to stay.</p>
+    <section class="body js-hide" id="lodging">
+      <h2 class="js-hide">Lodging</h2>
+      <p>
+        There's various places to stay in Fairbanks, however, Fairbanks is frequented by many tourists in the summer and it can get
+        To make this happen we'll be posting here information about various places to stay.
+        Furthermore, we're hoping to arrange a group camping situation.
+      </p>
+      <p>
+        So, please <a href="#rsvp">RSVP</a> as soon as possible and let us know where your lodging interests are.
+      </p>
+        
     </section>
   
   
+    <section class="body js-hide" id="rvsp">
+      <h2 class="js-hide">RVSP / Survey</h2>
+      
+      <script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));</script>
+
+      <script type="text/javascript">
+        var z7x4a3 = new WufooForm();
+        z7x4a3.initialize({
+          'userName':'hallieandamiel',
+          'formHash':'z7x4a3',
+          'autoResize':true,
+          'height':'483'});
+        z7x4a3.display();
+      </script>
+
+
+    </section>
     
   </div>  
 
@@ -59,7 +84,21 @@
   <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
   
   <script type="text/javascript" charset="utf-8">
-    $('nav ul').tabs('.body', { effect: 'fade', history: true, initialIndex: 0 });
+    (function() {
+      var nav_list_context = $('nav ul'),
+          api;
+      
+      nav_list_context.tabs('.body', { effect: 'fade', history: true, initialIndex: 0 });
+      api = nav_list_context.data('tabs');
+    
+      $('a[href^=#]').click(function() {
+        var t = $(this),
+            href = t.attr("href"),
+            index = $('li a', nav_list_context).index($('a[href^=' + href + ']', nav_list_context));
+        api.click(index);
+        return false;
+      });
+    })();
   </script>
 </body>
 </html>

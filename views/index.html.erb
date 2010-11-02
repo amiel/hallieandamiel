@@ -7,8 +7,9 @@
   <script type="text/javascript">
   	document.getElementsByTagName('html')[0].className += 'js';
   </script>
-
-  <link href='http://fonts.googleapis.com/css?family=Tangerine|Josefin+Sans+Std+Light' rel='stylesheet' type='text/css'>
+  
+  <%# |PT+Sans+Narrow:regular,bold %>
+  <link href='http://fonts.googleapis.com/css?family=Neucha|Josefin+Sans+Std+Light' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/screen.css" type="text/css" />
 
   <!--[if IE]>
@@ -36,69 +37,25 @@
   
     <section class="body" id="basic_information">
       <h2 class="js-hide">Basic Information</h2>
-      
-      <dl>
-        <dt>When</dt>
-        <dd>July 23rd, 2011</dd>
-        
-        <dt>Where</dt>
-        <dd>Fairbanks, Alaska</dd>
-      </dl>
+      <%= erb :'_basic_information.html' %>
     </section>
 
     <section class="body js-hide" id="lodging">
       <h2 class="js-hide">Lodging</h2>
-      <p>
-        There's various places to stay in Fairbanks, however, Fairbanks is frequented by many tourists in the summer and it can get
-        To make this happen we'll be posting here information about various places to stay.
-        Furthermore, we're hoping to arrange a group camping situation.
-      </p>
-      <p>
-        So, please <a href="#rsvp">RSVP</a> as soon as possible and let us know where your lodging interests are.
-      </p>
-        
+      <%= erb :'_lodging.html' %>
     </section>
   
   
     <section class="body js-hide" id="rvsp">
       <h2 class="js-hide">RVSP / Survey</h2>
-      
-      <script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));</script>
-
-      <script type="text/javascript">
-        var z7x4a3 = new WufooForm();
-        z7x4a3.initialize({
-          'userName':'hallieandamiel',
-          'formHash':'z7x4a3',
-          'autoResize':true,
-          'height':'483'});
-        z7x4a3.display();
-      </script>
-
-
+      <%= erb :'_rvsp.html' %>
     </section>
-    
   </div>  
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
   <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
   
-  <script type="text/javascript" charset="utf-8">
-    (function() {
-      var nav_list_context = $('nav ul'),
-          api;
-      
-      nav_list_context.tabs('.body', { effect: 'fade', history: true, initialIndex: 0 });
-      api = nav_list_context.data('tabs');
-    
-      $('a[href^=#]').click(function() {
-        var t = $(this),
-            href = t.attr("href"),
-            index = $('li a', nav_list_context).index($('a[href^=' + href + ']', nav_list_context));
-        api.click(index);
-        return false;
-      });
-    })();
-  </script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/application.js"></script>
+  <div></div>
 </body>
 </html>

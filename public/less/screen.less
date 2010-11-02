@@ -4,12 +4,16 @@
 @header_background_color: rgba(255,255,255, 0.25);
 @body_background_color: rgba(255,255,255, 0.75);
 
+@font_stack: 'Josefin Sans Std Light', arial, serif;
+/*@font_stack: 'PT Sans Narrow', arial, serif;*/
+@header_font_stack: 'Neucha', arial, serif;
+
 .js .js-hide{ display: none; }
 
-body{ font-family: 'Josefin Sans Std Light', arial, serif; background: url(/images/bg.jpg) repeat bottom left;  }
+body{ font-family: @font_stack; background: url(/images/bg.jpg) repeat bottom left; letter-spacing: 0.05em; }
 img.bg{ position: absolute; left: 0; bottom: 0; width: 100%; z-index: -1; position: fixed; }
 
-h1,h2,h3,h4,h5,h6{ font-family: 'Tangerine', arial, serif; }
+h1,h2,h3,h4,h5,h6{ font-family: @header_font_stack; }
 
 
 #wrapper{ width: 960px; margin: 25px auto; }
@@ -17,11 +21,11 @@ h1,h2,h3,h4,h5,h6{ font-family: 'Tangerine', arial, serif; }
 @nav_height: 28px;
 
 header{ height: 200px; background: @header_background_color url(/images/juggling.png); position: relative;
-  h1{ font-size: 3.2em; padding: 70px 0 0 275px; color: #000; text-shadow: #fff 1px 1px 1px; }
+  h1{ font-size: 2.6em; padding: 70px 0 0 275px; color: #000; text-shadow: #fff 1px 1px 1px; }
 
   nav{ height: @nav_height; position: absolute; bottom: 0;
     ul{
-      li{ display: block; float: left; height: @nav_height; font-size: 1.2em; letter-spacing: 1px;
+      li{ display: block; float: left; height: @nav_height; font-size: 1.2em; letter-spacing: 0.1em;
         a{ text-decoration: none; display: block; height: @nav_height - (3px*2); padding: 3px 6px; color: #000;
           &:hover{ background: rgba(255,255,255, 0.45); }
           &.current{ background: rgba(255,255,255, 0.65); }

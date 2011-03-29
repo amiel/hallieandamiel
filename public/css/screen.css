@@ -45,4 +45,4 @@ header{height:200px;background:rgba(255, 255, 255, 0.25) url(/images/juggling.pn
 header nav{height:28px;position:absolute;bottom:0;}header nav ul li{display:block;float:left;height:28px;font-size:1.2em;letter-spacing:0.1em;}header nav ul li a{text-decoration:none;display:block;height:22px;padding:3px 6px;color:#000;}header nav ul li a:hover{background:rgba(255, 255, 255, 0.45);}
 header nav ul li a.current{background:rgba(255, 255, 255, 0.65);}
 section.body{background:rgba(255, 255, 255, 0.75);padding:25px 30px;min-height:250px;font-size:1.2em;}section.body h2{font-size:1.4em;}
-section.body p{margin:0.6em 0;}
+section.body p{margin:0 0 0.6em 0;}

@@ -23,6 +23,10 @@ $(document).ready(function() {
     // });
 
 
+    $('a[rel=external]').each(function(index) {
+        $(this).attr('target', '_blank');
+    });
+
     $('a[href^=#]').click(function() {
         var t = $(this),
         href = t.attr("href"),

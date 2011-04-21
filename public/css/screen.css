@@ -38,7 +38,7 @@ h3{font-size:1.5em;line-height:1.2;}
 h4{font-size:1.25em;line-height:1.25;}
 .js .js-hide{display:none;}
 body{font-family:'Josefin Sans Std Light',arial,serif;background:url(/images/bg.jpg) repeat bottom left;letter-spacing:0.05em;}
-img.bg{position:absolute;left:0;bottom:0;width:100%;z-index:-1;position:fixed;}
+img.bg{position:absolute;left:0;bottom:0;width:100%;min-width:1000px;height:auto;min-height:100%;z-index:-1;position:fixed;}
 h1,h2,h3,h4,h5,h6{font-family:'Neucha',arial,serif;}
 #wrapper{width:960px;margin:25px auto;}
 header{height:200px;background:rgba(255, 255, 255, 0.25) url(/images/juggling.png);position:relative;}header h1{font-size:2.6em;padding:70px 0 0 275px;color:#000;text-shadow:#fff 1px 1px 1px;}

@@ -46,3 +46,5 @@ header nav{height:28px;position:absolute;bottom:0;}header nav ul li{display:bloc
 header nav ul li a.current{background:rgba(255, 255, 255, 0.65);}
 section.body{background:rgba(255, 255, 255, 0.75);padding:25px 30px;min-height:250px;font-size:1.2em;}section.body h2{font-size:1.4em;}
 section.body p{margin:0 0 0.6em 0;}
+footer{background:rgba(255, 255, 255, 0.75);padding:25px 30px;text-align:center;}footer a{color:#336;text-decoration:none;}
+footer a:hover{text-decoration:underline;}

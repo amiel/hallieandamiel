@@ -30,7 +30,7 @@ $(document).ready(function() {
             marriage_site: 'images/icons/wedding.png',
             murphy_dome_parking: 'images/icons/parking.png',
             mcgee_house: 'images/icons/house_tree.png',
-            chena_hot_springs: 'images/icons/hotspring.png'
+            chena_hot_springs: 'images/icons/geyser-2.png'
         };
 
         var infos = {
@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 
         var myOptions = {
-           zoom: 11,
+           zoom: 10,
            center: lat_lng_for(center),
            mapTypeId: google.maps.MapTypeId.HYBRID
          };

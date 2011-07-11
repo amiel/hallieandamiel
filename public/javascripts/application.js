@@ -10,7 +10,7 @@
 
 $(document).ready(function() {
 
-    var map;
+    var map, openers = {};
 
     var setup_map = function() {
 
@@ -18,27 +18,26 @@ $(document).ready(function() {
         var places = {
             mushers_hall: [64.89883, -147.73017],
             pioneer_park: [64.83859, -147.7738],
-            murphy_dome: [64.95390, -148.3637]
+            murphy_dome: [64.95390, -148.3637],
+            mcgee_house: [64.92066, -147.88576]
         };
 
         var icons = {
             pioneer_park: 'images/icons/circus.png',
-            mushers_hall: 'images/icons/party-2.png',
-            murphy_dome: 'images/icons/wedding.png'
+            mushers_hall: 'images/icons/dancinghall.png',
+            murphy_dome: 'images/icons/wedding.png',
+            mcgee_house: 'images/icons/house_tree.png'
         };
 
         var infos = {
             pioneer_park: "<h2>Pioneer Park</h2><p>Chautauqua Parade &amp; Show</p>",
             mushers_hall: "<h2>Mushers Hall</h2><p>Family Dinner and Reception</p>",
-            murphy_dome: "<h2>Murphy Dome</h2><p>Wedding Ceremony</p>"
+            murphy_dome: "<h2>Murphy Dome</h2><p>Wedding Ceremony</p>",
+            mcgee_house: "<h2>Hallie's Parents House</h2>"
         };
 
         var lat_lng_for = function(place) {
             return new google.maps.LatLng(place[0], place[1])
-        };
-
-        var marker_for = function(name) {
-
         };
 
 
@@ -63,9 +62,10 @@ $(document).ready(function() {
                      content: infos[name]
                  });
 
-                 google.maps.event.addListener(marker, 'click', function() {
-                   infowindow.open(map, marker);
-                 });
+                 openers[name] = function() {
+                     infowindow.open(map, marker);
+                 };
+                 google.maps.event.addListener(marker, 'click', openers[name]);
              }
          });
     };
@@ -100,7 +100,13 @@ $(document).ready(function() {
         var t = $(this),
             href = t.attr("href"),
             index = $('li a', nav_list_context).index($('a[href^=' + href + ']', nav_list_context));
-        api.click(index);
+
+        if (index < 0) {
+            opener = openers[t.attr('href').replace(/^#/, '')];
+            if (opener) opener();
+        } else {
+            api.click(index);
+        }
         return false;
     });
 

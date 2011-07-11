@@ -10,7 +10,7 @@
 
 $(document).ready(function() {
 
-    var map, openers = {};
+    var map, openers = {}, current_infowindow;
 
     var setup_map = function() {
 
@@ -62,10 +62,25 @@ $(document).ready(function() {
                      content: infos[name]
                  });
 
-                 openers[name] = function() {
-                     infowindow.open(map, marker);
+                 infowindow.do_close = function() {
+                     infowindow.close();
+                     infowindow.show = false;
                  };
+
+                 openers[name] = function() {
+                     if (infowindow.show) {
+                         current_infowindow = null;
+                         infowindow.do_close();
+                     } else {
+                         if (current_infowindow) current_infowindow.do_close();
+                         infowindow.open(map, marker);
+                         infowindow.show = true;
+                         current_infowindow = infowindow;
+                     }
+                 };
+
                  google.maps.event.addListener(marker, 'click', openers[name]);
+
              }
          });
     };

@@ -30,10 +30,10 @@ $(document).ready(function() {
         };
 
         var infos = {
-            pioneer_park: "<h2>Pioneer Park</h2><p>Chautauqua Parade &amp; Show</p>",
-            mushers_hall: "<h2>Mushers Hall</h2><p>Family Dinner and Reception</p>",
-            murphy_dome: "<h2>Murphy Dome</h2><p>Wedding Ceremony</p>",
-            mcgee_house: "<h2>Hallie's Parents House</h2>"
+            pioneer_park: "<div class='infos'><h2>Pioneer Park</h2><p>Chautauqua Parade &amp; Show</p></div>",
+            mushers_hall: "<div class='infos'><h2>Mushers Hall</h2><p>Family Dinner and Reception</p></div>",
+            murphy_dome: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony</p></div>",
+            mcgee_house: "<div class='infos'><h2>Hallie's Parents House</h2></div>"
         };
 
         var lat_lng_for = function(place) {
@@ -102,7 +102,8 @@ $(document).ready(function() {
             index = $('li a', nav_list_context).index($('a[href^=' + href + ']', nav_list_context));
 
         if (index < 0) {
-            opener = openers[t.attr('href').replace(/^#/, '')];
+            // Try showing a map icon window thing.
+            opener = openers[href.replace(/^#/, '')];
             if (opener) opener();
         } else {
             api.click(index);

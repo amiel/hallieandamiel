@@ -48,3 +48,4 @@ section.body{background:rgba(255, 255, 255, 0.75);padding:25px 30px;min-height:2
 section.body p{margin:0 0 0.6em 0;}
 footer{background:rgba(255, 255, 255, 0.75);padding:25px 30px;text-align:center;}footer a{color:#336;text-decoration:none;}
 footer a:hover{text-decoration:underline;}
+#map{width:900px;height:562px;}

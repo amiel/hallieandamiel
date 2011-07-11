@@ -18,7 +18,8 @@ $(document).ready(function() {
         var places = {
             mushers_hall: [64.89883, -147.73017],
             pioneer_park: [64.83859, -147.7738],
-            murphy_dome: [64.95390, -148.3637],
+            murphy_dome_parking: [64.95390, -148.3637],
+            marriage_site: [64.96003, -148.38291],
             mcgee_house: [64.92066, -147.88576],
             chena_hot_springs: [65.0533, -146.0572]
         };
@@ -26,7 +27,8 @@ $(document).ready(function() {
         var icons = {
             pioneer_park: 'images/icons/circus.png',
             mushers_hall: 'images/icons/dancinghall.png',
-            murphy_dome: 'images/icons/wedding.png',
+            marriage_site: 'images/icons/wedding.png',
+            murphy_dome_parking: 'images/icons/parking.png',
             mcgee_house: 'images/icons/house_tree.png',
             chena_hot_springs: 'images/icons/hotspring.png'
         };
@@ -34,18 +36,19 @@ $(document).ready(function() {
         var infos = {
             pioneer_park: "<div class='infos'><h2>Pioneer Park</h2><p>Chautauqua Parade &amp; Show</p></div>",
             mushers_hall: "<div class='infos'><h2>Mushers Hall</h2><p>Family Dinner and Reception</p></div>",
-            murphy_dome: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony</p></div>",
+            murphy_dome_parking: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony Parking</p></div>",
+            marriage_site: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony</p></div>",
             mcgee_house: "<div class='infos'><h2>Hallie's Parents House</h2></div>",
             chena_hot_springs: "<div class='infos'><h2>Chena Hot Springs</h2></div>"
         };
 
         var lat_lng_for = function(place) {
-            return new google.maps.LatLng(place[0], place[1])
+            return new google.maps.LatLng(place[0], place[1]);
         };
 
 
         var myOptions = {
-           zoom: 10,
+           zoom: 11,
            center: lat_lng_for(center),
            mapTypeId: google.maps.MapTypeId.HYBRID
          };

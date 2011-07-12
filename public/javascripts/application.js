@@ -21,7 +21,8 @@ $(document).ready(function() {
             murphy_dome_parking: [64.95390, -148.3637],
             marriage_site: [64.96003, -148.38291],
             mcgee_house: [64.92066, -147.88576],
-            chena_hot_springs: [65.0533, -146.0572]
+            chena_hot_springs: [65.0533, -146.0572],
+            notc_camp: [64.83971, -148.1333]
         };
 
         var icons = {
@@ -30,7 +31,8 @@ $(document).ready(function() {
             marriage_site: 'images/icons/wedding.png',
             murphy_dome_parking: 'images/icons/parking.png',
             mcgee_house: 'images/icons/house_tree.png',
-            chena_hot_springs: 'images/icons/geyser-2.png'
+            chena_hot_springs: 'images/icons/geyser-2.png',
+            notc_camp: 'images/icons/summercamp.png'
         };
 
         var infos = {
@@ -39,7 +41,8 @@ $(document).ready(function() {
             murphy_dome_parking: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony Parking</p></div>",
             marriage_site: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony</p></div>",
             mcgee_house: "<div class='infos'><h2>Hallie's Parents House</h2></div>",
-            chena_hot_springs: "<div class='infos'><h2>Chena Hot Springs</h2></div>"
+            chena_hot_springs: "<div class='infos'><h2>Chena Hot Springs</h2></div>",
+            notc_camp: "<div class='infos'><h2>Calipso Farm</h2><p>Chautauqua Camp</p></div>"
         };
 
         var lat_lng_for = function(place) {

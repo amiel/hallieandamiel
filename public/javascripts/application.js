@@ -22,7 +22,8 @@ $(document).ready(function() {
             marriage_site: [64.96003, -148.38291],
             mcgee_house: [64.92066, -147.88576],
             chena_hot_springs: [65.0533, -146.0572],
-            notc_camp: [64.83971, -148.1333]
+            notc_camp: [64.83971, -148.1333],
+            hot_licks: [64.85636, -147.80733]
         };
 
         var icons = {
@@ -32,7 +33,8 @@ $(document).ready(function() {
             murphy_dome_parking: 'images/icons/parking.png',
             mcgee_house: 'images/icons/house_tree.png',
             chena_hot_springs: 'images/icons/geyser-2.png',
-            notc_camp: 'images/icons/summercamp.png'
+            notc_camp: 'images/icons/summercamp.png',
+            hot_licks: 'images/icons/icecream.png'
         };
 
         var infos = {
@@ -42,7 +44,8 @@ $(document).ready(function() {
             marriage_site: "<div class='infos'><h2>Murphy Dome</h2><p>Wedding Ceremony</p></div>",
             mcgee_house: "<div class='infos'><h2>Hallie's Parents House</h2></div>",
             chena_hot_springs: "<div class='infos'><h2>Chena Hot Springs</h2></div>",
-            notc_camp: "<div class='infos'><h2>Calipso Farm</h2><p>Chautauqua Camp</p></div>"
+            notc_camp: "<div class='infos'><h2>Calipso Farm</h2><p>Chautauqua Camp</p></div>",
+            hot_licks: "<div class='infos'><h2>Hot Licks</h2><p>Great homemade ice cream</p></div>"
         };
 
         var lat_lng_for = function(place) {

@@ -1,0 +1,8 @@
+production:
+    access_key_id: AKIAJIZX45RMOE5BULLQ
+    secret_access_key: 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
+    bucket: hallieandamiel
+development:
+    access_key_id: AKIAJIZX45RMOE5BULLQ
+    secret_access_key: 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
+    bucket: hallieandamiel-dev

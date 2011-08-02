@@ -1,0 +1,28 @@
+<%=image_tag(@photo.photo.url(:full)) %>
+
+<div class="photo-tags">
+	<%=raw @photo.tags.collect {|tag|
+		next if tag.new_record?
+		link_to(tag.tag, tag)
+	}.compact.join(',')%>
+	
+	<%=semantic_form_for [@photo,@tag] do |f| %>
+		<%=f.inputs do %>
+			<%=f.input :tag %>
+		<% end %>
+		
+		<%= f.buttons do %>
+	      <%= f.commit_button %>
+	    <% end %>
+	<% end %>
+	
+	<% content_for :footer do # TODO: move to app.js once i grok the asset pipeline %>
+		<script type="text/javascript">
+		$(function(){
+			$('#tag_tag').autocomplete({
+				source:<%=raw tags_path.to_json %>
+			});
+		});
+		</script>
+	<% end %>
+</div>

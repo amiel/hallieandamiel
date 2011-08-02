@@ -101,18 +101,18 @@ $(document).ready(function() {
     var api,
         nav_list_context = $('nav ul');
 
-    nav_list_context.tabs('.body', {
-        effect: 'fade',
-        history: true,
-        initialIndex: 0
-    });
-    api = nav_list_context.data('tabs');
-
-    api.onClick(function(e, index) {
-        if (index == 2 && typeof map === 'undefined')
-            setup_map();
-    });
-
+    // nav_list_context.tabs('.body', {
+    //         effect: 'fade',
+    //         history: true,
+    //         initialIndex: 0
+    //     });
+    //     api = nav_list_context.data('tabs');
+    
+    // api.onClick(function(e, index) {
+    //         if (index == 2 && typeof map === 'undefined')
+    //             setup_map();
+    //     });
+    
     // api.onClick(function(index) {
     //   // z7x4a3.resizeForm({"height":"620px", "rules" : "", "protocol" : "", "method":"memcache"});
     //   // z7x4a3.addResizeScript();

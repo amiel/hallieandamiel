@@ -1,0 +1,75 @@
+<h2>Upload a Photo</h2>
+
+<p>Some copy (copys -- <em>amiel</em>) should go here about how awesome the wedding was, and what will happen with the photos that get uploaded.</p>
+
+<%=semantic_form_for @photo, :html => { :multipart => true } do |f| %>
+	<ul class="errors">
+	</ul>
+	<%=f.inputs do %>
+		<%=f.input :uploader_name, :label => 'Your Name', :hint => "We'd love to know who's uploading these amazing photos. If you include your name, we'll automatically group all your photos together!" %>
+		<%=f.input :uploader_email %>
+
+		<%=f.input :photo, :hint => "Upload your photos in any image format!" %>
+	<% end %>
+	
+    <%= f.buttons do %>
+      <%= f.commit_button %>
+    <% end %>
+<% end %>
+
+<% content_for :footer do %>
+	<link href="/css/uploadify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="/javascripts/jquery.uploadify.js"></script>
+	<script type="text/javascript">
+	var upload_errors = [];
+	
+	$(function() {
+	  $('#photo_photo').uploadify({
+	    'swf'  : '/uploadify.swf',
+	    'uploader'    : <%=raw photos_path(:format=>'js').to_json %>,
+	    'cancelImage' : '/images/uploadify-cancel.png',
+		'checkExisting': false,
+		'removeCompleted': true,
+	    'auto'      : false,
+		'requeueErrors' : false,
+		'fileObjName' : 'photo[photo]',
+		'postData'	: {
+			'authenticity_token': <%=raw form_authenticity_token.to_json %>
+		},
+		'onQueueComplete': function() {
+			if (upload_errors.length == 0) {
+				document.location = <%=raw photos_path.to_json %>;
+			} else {
+				$('#new_photo').find('.errors').html('');
+				for(i in upload_errors) {
+					$('#new_photo').find('.errors').append('<ul>'+upload_errors[i]+'</ul>');
+				}
+				$('#new_photo').find('.commit').show(); // TODO: enable instead
+			}
+		},
+		'onUploadSuccess': function(file, messages, response) {
+			var response_object = jQuery.parseJSON(messages);
+			if (response_object != true) { // TODO: typeof
+				upload_errors = response_object;
+				// TODO: requeue eventually
+			}
+		}
+	  });
+	
+		$('#new_photo').submit(function() {
+			
+			upload_errors = [];
+			
+			$('#photo_photo').uploadifySettings('postData',{
+					'photo[uploader_name]' : $('#photo_uploader_name').val(),
+					'photo[uploader_email]' : $('#photo_uploader_email').val()
+			});
+			
+			$('#photo_photo').uploadifyUpload();
+			// TODO: disable the buttons here, but only if there's photos in the queue
+			return false;
+		});
+	
+	});
+	</script>
+<% end %>

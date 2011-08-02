@@ -1,0 +1,10 @@
+<% if @tags.size > 0 then %>
+	<ul class="tags">
+		<%= render @tags %>
+	</ul>
+
+<% else %>
+
+	<div class="no-content">Unfortunately, nobody's uploaded any photos yet. Why not <%=link_to 'upload your own?', new_photo_path %></div>
+
+<% end %>

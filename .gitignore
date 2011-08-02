@@ -1,2 +1,7 @@
 .DS_Store
 pictures
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/

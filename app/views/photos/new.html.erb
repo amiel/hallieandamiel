@@ -1,19 +1,19 @@
-<h2>Upload a Photo</h2>
+<h2>Add Your Photos</h2>
 
-<p>Some copy (copys -- <em>amiel</em>) should go here about how awesome the wedding was, and what will happen with the photos that get uploaded.</p>
+<p>We're happy you were able to join us for the wedding, and thankful you feel like sharing your photos with the world! Once we add your photos, everyone will be able to enjoy them.</p>
 
 <%=semantic_form_for @photo, :html => { :multipart => true } do |f| %>
 	<ul class="errors">
 	</ul>
 	<%=f.inputs do %>
-		<%=f.input :uploader_name, :label => 'Your Name', :hint => "We'd love to know who's uploading these amazing photos. If you include your name, we'll automatically group all your photos together!" %>
-		<%=f.input :uploader_email %>
+		<%=f.input :uploader_name, label: 'Your Name', hint: "We want to make sure you get credit for all of your snazzy photography work" %>
+		<%=f.input :uploader_email, label: 'Your Email', hint: "Don't worry, it's just between us and you" %>
 
-		<%=f.input :photo, :hint => "Upload your photos in any image format!" %>
+		<%=f.input :photo, :hint => "Select the photos you'd like to add" %>
 	<% end %>
 	
     <%= f.buttons do %>
-      <%= f.commit_button %>
+      <button type="submit">Finish and Upload</button>
     <% end %>
 <% end %>
 

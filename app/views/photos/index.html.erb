@@ -1,7 +1,5 @@
-<h2>All the photos!</h2>
-
-<ul class="thumbnail-list">
-<%=render @photos %>
+<ul class="thumbnails">
+  <%= render @photos %>
 </ul>
 
-<%=link_to 'Add your own photos!', new_photo_path %>
+<%= link_to 'Add Your Photos', new_photo_path, class: 'button' %>

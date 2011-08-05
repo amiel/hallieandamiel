@@ -21,20 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-.uploadifyButton {
-	background-color: #505050;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	color: #FFF;
-	font: 12px Arial, Helvetica, sans-serif;
-	padding: 8px 0;
-	text-align: center;
-	width: 100%;
-}
-.uploadify:hover .uploadifyButton {
-	background-color: #808080;
-}
 .uploadifyQueueItem {
 	background-color: #F5F5F5;
 	-webkit-border-radius: 3px;

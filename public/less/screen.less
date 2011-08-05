@@ -51,23 +51,28 @@ footer{ background: @body_background_color; padding: 25px 30px; text-align: cent
 #map{ width: 960px - 60px; height: 562px; }
 .infos{ min-width: 256px + 96px; min-height: 96px; }        
 
-form{
+form{ margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,.15);
   ol{ .reset; list-style-type: none;
-    li{ .reset; margin-bottom: 1em; overflow: hidden; 
+    li{ .reset; margin: 1em; overflow: hidden; clear: both; 
       label{ float: left; width: 6em; font-family: @ui_font_stack; margin-right: 1em; line-height: 2.2em; color: #333; font-size: .8em; }
       p.inline-hints{ font-size: .85em; color: #555; clear: both; margin-top: .5em; }
       input[type=text], input[type=email]{ float: left; display: block; background: #fff; background: rgba(255,255,255,.7); border-radius: 2px; border: 1px inset #ccc; width: 15em; padding: 4px; font: 12px @ui_font_stack; 
         &:focus{ background: #fff; outline: 0; }
       }            
     }    
-  }
+  }       
+  
+  .buttons{ margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,.15); padding-left: 1em; }
 }      
 
-#photo_photo_input label{ display: none; } 
+#photo_photo_input{ position: relative; 
+  label{ display: none; } 
+  .inline-hints{ position: absolute; top: 0; margin: 0; left: 140px; line-height: 2.2em; }  
+} 
 
 /* Horky generated CSS3 buttons */
 /* TODO: unsuck this */
-button, a.button {
+button, a.button, .uploadifyButton {
 	font-family: @ui_font_stack;
 	font-size: 12px;
 	color: #ffffff;
@@ -107,5 +112,22 @@ button, a.button {
     	-webkit-box-shadow:
     		0px 1px 3px rgba(000,000,000,0.5),
     		inset 0px 0px 1px rgba(255,255,255,1);
+	}       
+	
+	&.uploadifyButton{
+  	background: -moz-linear-gradient(
+  		top,
+  		#ccc 0%,
+  		#888);
+  	background: -webkit-gradient(
+  		linear, left top, left bottom, 
+  		from(#ccc),
+  		to(#888));	  
+  	border: 1px solid #888;
+  	color: #333;
+  	text-shadow: 0 1px 1px rgba(255,255,255,1);
+  	padding: 4px; 
+  	font-size: 12px;
+  	text-align: center;
 	}
 }

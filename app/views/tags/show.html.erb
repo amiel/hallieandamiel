@@ -1,7 +1,5 @@
-<h2>Photos marked with <%=@tag.tag%>!</h2>
+<h2>Photos labeled with <%=@tag.tag%>!</h2>
 
 <ul class="thumbnail-list">
 <%=render @photos %>
 </ul>
-
-<%=link_to 'Add your own photos!', new_photo_path %>

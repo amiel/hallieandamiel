@@ -1,6 +1,7 @@
 == Welcome to Hallie and Amiel!
 
 === Adrian's Todo:
+ - Sanitize uploader names
  - Photo approval
  - Pagination interface
  - Tons of TODOs marked around the app

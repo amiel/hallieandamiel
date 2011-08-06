@@ -1,0 +1,13 @@
+<%=semantic_form_for @photo, :html => { :multipart => true } do |f| %>
+	<ul class="errors">
+	</ul>
+	<%=f.inputs do %>
+		<%=f.input :uploader_name, label: 'Uploader Name' %>
+		<%=f.input :uploader_email, label: 'Uploader Email' %>
+		<%=f.input :approved %>
+	<% end %>
+	
+    <%= f.buttons do %>
+      <button type="submit">Finish and Upload</button>
+    <% end %>
+<% end %>

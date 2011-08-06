@@ -4,6 +4,8 @@
  - Thank you message after the upload - probably also take them to their personal tag instead of photos/index
  - Sanitize uploader names
  - tag autocomplete
- - Photo approval
  - Pagination interface
- - Tons of TODOs marked around the app
+ - Tag editing on photos/edit
+
+
+https://github.com/harvesthq/chosen/issues/5

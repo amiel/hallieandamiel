@@ -21,7 +21,7 @@ class TagsController < ApplicationController
   end
   
   def create
-    @tag = Tag.find_or_create_by_tag(params[:tag][:tag]) # TODO: case-insensitive
+    @tag = Tag.find_or_create_by_tag(params[:tag][:tag]) # BIG BUG: case-insensitive
     if params[:photo_id] then
       @photo = Photo.find(params[:photo_id])
       @tagging = Tagging.create({

@@ -1,10 +1,12 @@
 <%=image_tag(@photo.photo.url(:full)) %>
 
-<div class="photo-tags">
-	<%=raw @photo.tags.collect {|tag|
-		next if tag.new_record?
-		link_to(tag.tag, tag)
-	}.compact.join(',')%>
+<section class="tags">
+	<ul class="tags">
+	<% @photo.tags.each {|tag|
+		next if tag.new_record?%>
+		<li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag.tag, tag)%></ul>
+	<% } %>
+	</ul>
 	
 	<%=semantic_form_for [@photo,@tag] do |f| %>
 		<%=f.inputs do %>
@@ -25,4 +27,4 @@
 		});
 		</script>
 	<% end %>
-</div>
+</section>

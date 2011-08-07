@@ -9,6 +9,7 @@ Hallieandamiel::Application.routes.draw do
   end
   
   match "/categories", :to => 'tags#index' # Because tags is a scary word.
+  match "/albums", to: 'tags#index', as: 'albums' # Because tags is a scary word.
   
   root :to => 'details#index'
 end

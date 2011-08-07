@@ -4,7 +4,7 @@
 	<ul class="tags">
 	<% @photo.tags.each {|tag|
 		next if tag.new_record?%>
-		<li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag.tag, tag)%></ul>
+		<li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
 	<% } %>
 	</ul>
 	

@@ -4,7 +4,7 @@ class Photo < ActiveRecord::Base
   has_many :taggings
   has_many :tags, :through => :taggings
   
-  has_attached_file :photo, :styles => { :full => "960x720>", :thumbnail => "100x100>" },
+  has_attached_file :photo, :styles => { :full => "960x720>", :thumbnail => "100x100#" },
     :storage => :s3,
     :s3_credentials => Rails.root.join('config/paperclip.yml'),
     :s3_headers => {'Expires' => 1.year.from_now.httpdate }

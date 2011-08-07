@@ -15,7 +15,11 @@
 body{ font-family: @font_stack; letter-spacing: 0.05em; }
 img.bg{ position: absolute; left: 0; bottom: 0; width: 100%; min-width: 1000px; height: auto; min-height: 100%; z-index: -1; position: fixed; }
 
-h1,h2,h3,h4,h5,h6{ font-family: @header_font_stack; }
+h1,h2,h3,h4,h5,h6{ font-family: @header_font_stack; }  
+
+a{ color: #27878c; text-decoration: none; 
+  &:hover{ color: #2b35ad; }
+}
 
 
 #wrapper{ width: 960px; margin: 25px auto; }
@@ -70,8 +74,22 @@ form{ margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,.15)
   .inline-hints{ position: absolute; top: 0; margin: 0; left: 140px; line-height: 2.2em; }  
 }      
                                                                     
-ul.thumbnails{ list-style-type: none; .reset; margin-bottom: 20px;
-  li{ display: inline-block; .reset; padding: 20px; }
+ul.thumbnails{ list-style-type: none; .reset; margin-bottom: 20px; overflow: hidden;
+  li{ float: left; .reset; padding: 0 14px; margin-bottom: 14px;
+    a{ display: block; 
+      img{ box-shadow: 0 1px 5px rgba(0,0,0,.4); }   
+      &:hover img{ box-shadow: 0 1px 7px rgba(0,0,0,.6); }
+    }
+  }
+}                       
+
+/* Tags */
+ul.tags{ .reset; list-style-type: none;
+  li{ .reset; display: inline-block; margin-right: 0px; 
+    a{ padding: 0 10px; display: inline-block; border: 1px solid #cccc52; background: #ffc; border-radius: 10px; color: #7a7a31; text-shadow: 0, 0, -1px #fff; line-height: 1em; text-decoration: none; font: 11px @ui_font_stack; 
+      &:hover{ color: #fff; text-shadow: rgba 0 0 1px rgba(0,0,0,.7); border-color: #cccc52; background: #cccc52; }
+    }
+  }
 }
 
 /* Horky generated CSS3 buttons */

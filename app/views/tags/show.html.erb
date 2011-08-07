@@ -1,5 +1,5 @@
-<h2>Photos labeled with <%=@tag.tag%>!</h2>
+<h2><%= link_to 'Photos', photos_path %> &rsaquo; <%= @tag %></h2>
 
-<ul class="thumbnail-list">
-<%=render @photos %>
+<ul class="thumbnails">
+  <%= render @photos %>
 </ul>

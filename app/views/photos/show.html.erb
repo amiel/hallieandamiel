@@ -7,16 +7,15 @@
 		<li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
 	<% } %>
 	</ul>
-	
+  <%# TODO: shouldn't we be checking to make sure they have permission to do this? %> 
 	<%=semantic_form_for [@photo,@tag] do |f| %>
 		<%=f.inputs do %>
-			<%=f.input :tag %>
+			<%=f.input :tag, label: "Add to Album" %>
+			<li>
+			  <button type="submit">Add</button>
+			</li>
 		<% end %>
-		
-		<%= f.buttons do %>
-	      <%= f.commit_button %>
-	    <% end %>
-	<% end %>
+ 	<% end %>
 	
 	<% content_for :footer do # TODO: move to app.js once i grok the asset pipeline %>
 		<script type="text/javascript">

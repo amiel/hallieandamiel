@@ -31,7 +31,8 @@
 		'checkExisting': false,
 		'removeCompleted': true,
 	    'auto'      : false,
-		'requeueErrors' : false,     
+		'requeueErrors' : false, 
+		'multi' : true,    
 		'buttonText' : 'Select Photos',
 		'buttonImage': '',
 		'fileObjName' : 'photo[photo]',
@@ -40,7 +41,7 @@
 		},
 		'onQueueComplete': function() {
 			if (upload_errors.length == 0) {
-				document.location = <%=raw photos_path.to_json %>;
+				document.location = <%= raw thank_you_path.to_json %>;
 			} else {
 				$('#new_photo').find('.errors').html('');
 				for(i in upload_errors) {

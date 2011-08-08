@@ -1,5 +1,7 @@
-<h2>Photos labeled with <%=@tag.tag%>!</h2>
+<h2><%= link_to 'Photo Albums', albums_path %> &rsaquo; <%= @tag %></h2>
 
-<ul class="thumbnail-list">
-<%=render @photos %>
+<ul class="thumbnails">
+  <%= render @photos %>
 </ul>
+
+<%= paginate @photos %>  

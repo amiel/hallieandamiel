@@ -1,3 +1,4 @@
-<li class="tag">
-	<%=link_to image_tag(tag.random_photo.photo.url(:thumbnail)) + '<strong>'.html_safe + tag.tag + '</strong>'.html_safe, tag %>
+<li class="album">
+	<%= link_to image_tag(tag.random_photo.photo.url(:thumbnail), alt: 'tag'), tag %>
+	<%= link_to tag, tag %>
 </li>

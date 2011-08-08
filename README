@@ -1,11 +1,17 @@
 == Welcome to Hallie and Amiel!
 
 === Adrian's Todo:
- - Thank you message after the upload - probably also take them to their personal tag instead of photos/index
  - Sanitize uploader names
  - tag autocomplete
  - Pagination interface
  - Tag editing on photos/edit
+ 
+=== Nathan's Todo:
+ - Style autocomplete
+ - Style pagination
+ - Breadcrumbs for Photo#show?
+ - Browser sanity check
+ 
 
 
 https://github.com/harvesthq/chosen/issues/5

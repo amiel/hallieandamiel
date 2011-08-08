@@ -2,6 +2,8 @@
 
 <ul class="thumbnails">
   <%= render @photos %>
-</ul>
+</ul>                                                                      
+
+<%= paginate @photos %>  
 
 <%= link_to 'Add Your Photos', new_photo_path, class: 'button' %>

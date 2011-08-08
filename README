@@ -3,12 +3,10 @@
 === Adrian's Todo:
  - Sanitize uploader names
  - tag autocomplete
- - Pagination interface
  - Tag editing on photos/edit
  
 === Nathan's Todo:
  - Style autocomplete
- - Style pagination
  - Browser sanity check 
 
 https://github.com/harvesthq/chosen/issues/5

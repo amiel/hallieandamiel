@@ -1,3 +1,5 @@
+<h2><%= link_to 'Photo Albums', albums_path %> <% if @breadcrumb_tag %>&rsaquo; <%= link_to @breadcrumb_tag, @breadcrumb_tag %> <% end %>&rsaquo; View Photo</h2>
+
 <%= image_tag @photo.photo.url(:full), class: 'full_photo' %>      
 
 <section class="metadata">

@@ -16,7 +16,11 @@ class PhotosController < ApplicationController
   
   def show
     @photo = Photo.find(params[:id])
-    @tag = @photo.tags.new
+    @tag = @photo.tags.new        
+           
+    # Set up breadcrumb link back to album
+    @breadcrumb_tag = Tag.find(session[:most_recent_tag]) if session[:most_recent_tag]
+    session[:most_recent_tag] = nil 
   end
   
   def create

@@ -5,7 +5,8 @@ gem 'rails', '3.1.0.rc5'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'sqlite3'     
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -18,7 +19,9 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'formtastic'
 gem 'kaminari'
-gem 'aws-s3'
+gem 'aws-s3'       
+
+gem 'therubyracer-heroku', '0.8.1.pre3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

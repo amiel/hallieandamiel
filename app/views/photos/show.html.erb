@@ -14,26 +14,27 @@
   		next if tag.new_record?%>
   		<li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
   	<% } %>
-  	</ul>
-    <%# TODO: shouldn't we be checking to make sure they have permission to do this? %> 
-  	<%=semantic_form_for [@photo,@tag] do |f| %>
+  	</ul>                                	
+  	<%=semantic_form_for [@photo] do |f| %>
+  	  <a href="#" id="tagging_toggle">Help us categorize this photo</a>
   		<%=f.inputs do %>
-  			<%=f.input :tag, label: "Add to Album" %>
-  			<li>
-  			  <button type="submit">Add</button>
+  			<%= f.input :tags, as: :select, multi: true, label: "Update Albums" %>
+  			<li id="tag_submit">
+  			  <button type="submit">Update</button>
   			</li>
   		<% end %>
-   	<% end %>
-	
-  	<% content_for :footer do # TODO: move to app.js once i grok the asset pipeline %>
-  		<script type="text/javascript">
-  		$(function(){
-  			$('#tag_tag').autocomplete({
-  				source:<%=raw tags_path.to_json %>
-  			});
-  		});
-  		</script>
-  	<% end %>
+   	<% end %>	
   </section>
                
-</section>
+</section>    
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $('form.photo ol').hide();
+    
+    $('#tagging_toggle').click(function(){
+      $('form.photo ol').slideToggle();
+      return false;
+    });
+  });
+</script>

@@ -2,11 +2,9 @@
 
 === Adrian's Todo:
  - Sanitize uploader names
- - tag autocomplete
  - Tag editing on photos/edit
 
 https://github.com/harvesthq/chosen/pull/162
  
 === Nathan's Todo:
- - Style autocomplete
  - Browser sanity check 

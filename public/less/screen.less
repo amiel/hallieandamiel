@@ -98,13 +98,16 @@ ul.tags{ .reset; list-style-type: none;
   }
 }       
 
-#new_tag{
-  li{ float: left; clear: none; .reset; margin-right: 4px;
-    label{ float: none; width: 100%; line-height: 1em; }
-    input{ float: none; width: 250px; }              
-    button{ margin-top: 2.25em; font-size: .7em; padding: 4px 10px; }
-  }
-}      
+#photo_tags_input{ overflow: visible; float: left; margin-right: 4px; 
+  li{ clear: none; }
+  label{ float: none; width: 100%; line-height: 1em; display: block; margin-bottom: 4px; }
+  select{ float: left; width: 400px; display: block; }              
+  button{ margin-top: 2.25em; font-size: .7em; padding: 4px 10px; }
+}                    
+
+#tag_submit{ float: left; clear: none; margin: 1.8em 0 0 0;}
+
+#tagging_toggle{ margin-left: 10px; font-size: .9em; }
 
 nav.pagination{ font-size: .85em; text-transform: uppercase; text-align: right; margin-bottom: 20px; }
 
@@ -168,4 +171,4 @@ button, a.button, .uploadifyButton {
   	font-size: 12px;
   	text-align: center;
 	}
-}
+}                   

@@ -1,10 +1,8 @@
 == Welcome to Hallie and Amiel!
 
-=== Adrian's Todo:
+=== TO DO
  - Sanitize uploader names
  - Tag editing on photos/edit
-
-https://github.com/harvesthq/chosen/pull/162
- 
-=== Nathan's Todo:
- - Browser sanity check 
+ - Browser sanity check      
+ - Restrict editing of user tags on photos
+ - Decent approval process 

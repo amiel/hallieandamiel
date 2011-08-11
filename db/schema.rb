@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110802224320) do
     t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
 end

@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   USER_NAME, PASSWORD = "amiel", "andhallie"
 
-  before_filter :authenticate, :only => [ :edit, :update, :unapproved ]
+  before_filter :authenticate, :only => [ :edit, :unapproved ]
 
   
   protect_from_forgery :except => [:create]

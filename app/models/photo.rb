@@ -27,7 +27,7 @@ class Photo < ActiveRecord::Base
   
   def tag_uploader
     if uploader_name and not uploader_name.blank? then
-      t = Tag.find_or_create_by_tag(sanitized_uploader_name)
+      t = Tag.find_or_create_by_tag_and_category(sanitized_uploader_name, 'user')
       t.taggings.create(:photo=>self)
     end
   end

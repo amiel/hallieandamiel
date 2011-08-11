@@ -1,7 +1,9 @@
 class Tag < ActiveRecord::Base
   
   has_many :taggings
-  has_many :photos, :through => :taggings
+  has_many :photos, :through => :taggings       
+  
+  scope :non_user, where(category: nil)
   
   def to_s
     self.tag

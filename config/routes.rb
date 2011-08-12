@@ -13,5 +13,5 @@ Hallieandamiel::Application.routes.draw do
   
   match "/thanks", to: 'photos#thanks', as: 'thank_you' # Because shut up REST is why
   
-  root :to => 'details#index'
+  root :to => 'tags#index'
 end

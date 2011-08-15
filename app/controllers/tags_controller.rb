@@ -17,7 +17,7 @@ class TagsController < ApplicationController
   
   def show                   
     @tag = Tag.find(params[:id])
-    @photos = @tag.photos.approved.page(params[:page] || 1).per(30)  
+    @photos = @tag.photos.approved.page(params[:page] || 1).per(42)
     
     session[:most_recent_tag] = @tag.id
   end

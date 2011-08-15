@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   protect_from_forgery :except => [:create]
 
   def index
-    @photos = Photo.approved.page(params[:page] || 1).per(30)
+    @photos = Photo.approved.page(params[:page] || 1).per(42)
   end
   
   def new

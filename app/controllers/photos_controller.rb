@@ -51,7 +51,7 @@ class PhotosController < ApplicationController
   end
   
   def unapproved
-    @photos = Photo.unapproved
+    @photos = Photo.unapproved.page(params[:page] || 1).per(100)
     render :index
   end
   

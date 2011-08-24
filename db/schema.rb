@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110802224320) do
+ActiveRecord::Schema.define(:version => 20110811053958) do
 
   create_table "photos", :force => true do |t|
     t.string   "uploader_name"

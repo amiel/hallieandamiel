@@ -1,6 +1,6 @@
 <h2><%= link_to 'Photo Albums', albums_path %> <% if @breadcrumb_tag %>&rsaquo; <%= link_to @breadcrumb_tag, @breadcrumb_tag %> <% end %>&rsaquo; View Photo</h2>
 
-<%= image_tag @photo.photo.url(:full), class: 'full_photo' %>      
+<%= image_tag @photo.photo.url(:full), class: 'full_photo' %>
 
 <section class="metadata">
 
@@ -9,29 +9,29 @@
   </p>
 
   <section class="tags">
-  	<ul class="tags">
-  	<% @photo.tags.each {|tag|
-  		next if tag.new_record?%>
-  		<li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
-  	<% } %>
-  	</ul>                                	
-  	<%=semantic_form_for [@photo] do |f| %>
-  	  <a href="#" id="tagging_toggle">Help us categorize this photo</a>
-  		<%=f.inputs do %>
-  			<%= f.input :tags, as: :select, multi: true, label: "Update Albums", collection: Tag.all %>
-  			<li id="tag_submit">
-  			  <button type="submit">Update</button>
-  			</li>
-  		<% end %>
-   	<% end %>	
+    <ul class="tags">
+    <% @photo.tags.each {|tag|
+      next if tag.new_record?%>
+      <li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
+    <% } %>
+    </ul>
+    <%=semantic_form_for [@photo] do |f| %>
+      <a href="#" id="tagging_toggle">Help us categorize this photo</a>
+      <%=f.inputs do %>
+        <%= f.input :tags, as: :select, multi: true, label: "Update Albums", collection: Tag.all %>
+        <li id="tag_submit">
+          <button type="submit">Update</button>
+        </li>
+      <% end %>
+     <% end %>
   </section>
-               
-</section>    
+
+</section>
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
     $('form.photo ol').hide();
-    
+
     $('#tagging_toggle').click(function(){
       $('form.photo ol').slideToggle();
       return false;

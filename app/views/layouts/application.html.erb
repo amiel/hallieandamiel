@@ -40,9 +40,9 @@
     </nav>
   </header>
 
-  <% if flash[:notice] then %>
+  <% if flash[:notice] %>
   <section class="flash notice">
-    <%=flash[:notice]%>
+    <%= flash[:notice] %>
   </section>
   <% end %>
 

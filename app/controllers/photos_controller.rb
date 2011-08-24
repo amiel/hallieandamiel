@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.approved.page(params[:page] || 1).per(42)
+    # session[:most_recent_tag] = nil
   end
 
   def new
@@ -18,11 +19,16 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @tag = @photo.tags.new
 
-
-
     # Set up breadcrumb link back to album
     @breadcrumb_tag = Tag.find(session[:most_recent_tag]) if session[:most_recent_tag]
-    session[:most_recent_tag] = nil
+
+    if @photo
+      # Get the next and previous photos in this set
+      @photos = (@breadcrumb_tag.try(:photos) || Photo).approved.all
+      index = @photos.index(@photo)
+      @previous_photo = @photos[index - 1] if index > 0
+      @next_photo = @photos[index + 1]
+    end
   end
 
   def create

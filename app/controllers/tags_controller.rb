@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  
+
   def index
     if params[:photo_id] then
       @tags = Photo.find(params[:photo_id]).tags
@@ -8,20 +8,24 @@ class TagsController < ApplicationController
     else
       @tags = Tag.all
     end
-    
+
+    session[:most_recent_tag] = nil
+
     respond_to do |format|
       format.html {}
       format.json { render :json => @tags.collect(&:tag) }
     end
+
+
   end
-  
-  def show                   
+
+  def show
     @tag = Tag.find(params[:id])
     @photos = @tag.photos.approved.page(params[:page] || 1).per(42)
-    
+
     session[:most_recent_tag] = @tag.id
   end
-  
+
   def create
     @tag = Tag.find_or_create_by_tag(params[:tag][:tag]) # BIG BUG: case-insensitive
     if params[:photo_id] then
@@ -30,11 +34,11 @@ class TagsController < ApplicationController
         :tag => @tag,
         :photo => @photo
       })
-      
+
       redirect_to @photo
     else
       redirect_to tags_path
     end
   end
-  
+
 end

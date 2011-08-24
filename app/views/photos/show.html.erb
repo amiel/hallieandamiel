@@ -1,5 +1,10 @@
 <h2><%= link_to 'Photo Albums', albums_path %> <% if @breadcrumb_tag %>&rsaquo; <%= link_to @breadcrumb_tag, @breadcrumb_tag %> <% end %>&rsaquo; View Photo</h2>
 
+
+
+<div class="next"><%= link_to 'Next', @next_photo if @next_photo %></div>
+<div class="previous"><%= link_to 'Previous', @previous_photo if @previous_photo %></div>
+
 <%= image_tag @photo.photo.url(:full), class: 'full_photo' %>
 
 <section class="metadata">
@@ -10,7 +15,7 @@
 
   <section class="tags">
     <ul class="tags">
-    <% @photo.tags.each {|tag|
+    <% @photo.tags.each { |tag|
       next if tag.new_record?%>
       <li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
     <% } %>

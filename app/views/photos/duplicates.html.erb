@@ -1,0 +1,17 @@
+<h2>Duplicate Photos</h2>
+
+
+<% d = @duplicates.first %>
+<% d.each do |photo| %>
+
+  <%= image_tag photo.photo.url(:full), class: 'full_photo' %>
+
+
+  <section class="tags">
+    <ul class="tags">
+    <% photo.tags.each { |tag| %>
+      <li class="tag" id="<%=dom_id(tag)%>"><%= tag %></li>
+    <% } %>
+    </ul>
+  </section>
+<% end %>

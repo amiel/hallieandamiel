@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   USER_NAME, PASSWORD = "amiel", "andhallie"
 
-  before_filter :authenticate, :only => [ :edit, :unapproved ]
+  before_filter :authenticate, :only => [ :edit, :unapproved, :duplicates ]
 
 
   protect_from_forgery :except => [:create]
@@ -65,6 +65,12 @@ class PhotosController < ApplicationController
 
   def edit
     @photo = Photo.find(params[:id])
+  end
+
+  def duplicates
+    counts = Photo.count :group => 'photo_file_name'
+    @duplicates = counts.select { |file_name, count| count > 1 }.
+                  collect { |file_name, count| Photo.all :conditions => { :photo_file_name => file_name } }
   end
 
   def update

@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   USER_NAME, PASSWORD = "amiel", "andhallie"
 
-  before_filter :authenticate, :only => [ :edit, :unapproved, :duplicates ]
+  before_filter :authenticate, :only => [ :edit, :unapproved, :duplicates, :destroy ]
 
 
   protect_from_forgery :except => [:create]
@@ -81,6 +81,12 @@ class PhotosController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.update_attribute :deleted_at, Time.current
+    redirect_to action: :duplicates
   end
 
   private

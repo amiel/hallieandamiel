@@ -10,33 +10,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811053958) do
+ActiveRecord::Schema.define(:version => 20110830011002) do
 
   create_table "photos", :force => true do |t|
-    t.string   "uploader_name"
-    t.string   "uploader_email"
-    t.string   "uploader_ip"
-    t.boolean  "approved",           :default => false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "uploader_name"
+    t.string    "uploader_email"
+    t.string    "uploader_ip"
+    t.boolean   "approved",           :default => false
+    t.string    "photo_file_name"
+    t.string    "photo_content_type"
+    t.integer   "photo_file_size"
+    t.timestamp "photo_updated_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.datetime  "deleted_at"
   end
 
   create_table "taggings", :force => true do |t|
-    t.integer  "photo_id"
-    t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "photo_id"
+    t.integer   "tag_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "tags", :force => true do |t|
-    t.string   "tag"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "category"
+    t.string    "tag"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "category"
   end
 
 end

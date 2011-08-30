@@ -85,7 +85,11 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
-    @photo.update_attribute :deleted_at, Time.current
+    if @photo.update_attribute :deleted_at, Time.current
+      flash[:notice] = "Deleted photo ##{ params[:id] }"
+    else
+      flash[:notice] = "Sorry, not saved: #{ @photo.errors.full_messages.join ', ' }"
+    end
     redirect_to action: :duplicates
   end
 

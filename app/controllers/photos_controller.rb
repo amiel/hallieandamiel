@@ -26,8 +26,10 @@ class PhotosController < ApplicationController
       # Get the next and previous photos in this set
       @photos = (@breadcrumb_tag.try(:photos) || Photo).approved.all
       index = @photos.index(@photo)
-      @previous_photo = @photos[index - 1] if index > 0
-      @next_photo = @photos[index + 1]
+      if index
+        @previous_photo = @photos[index - 1] if index > 0
+        @next_photo = @photos[index + 1]
+      end
     end
   end
 

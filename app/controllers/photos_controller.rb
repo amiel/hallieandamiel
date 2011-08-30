@@ -69,8 +69,13 @@ class PhotosController < ApplicationController
 
   def duplicates
     counts = Photo.count :group => 'photo_file_name'
-    @duplicates = counts.select { |file_name, count| count > 1 }.
-                  collect { |file_name, count| Photo.all :conditions => { :photo_file_name => file_name } }
+    # @duplicates = counts.select { |file_name, count| count > 1 }.
+    #               collect { |file_name, count| Photo.all :conditions => { :photo_file_name => file_name } }
+
+    @duplicates = counts.select { |file_name, count| count > 1 }
+    file_name = @duplicates.first.first
+    @duplicate = Photo.all :conditions => { :photo_file_name => file_name }
+
   end
 
   def update

@@ -1,8 +1,8 @@
 <h2>Duplicate Photos</h2>
 
+There are <%= @duplicates.size %> Duplicates.
 
-<% d = @duplicates.first %>
-<% d.each do |photo| %>
+<% @duplicate.each do |photo| %>
 
   <%= image_tag photo.photo.url(:full), class: 'full_photo' %>
   <%= link_to 'Delete this photo', photo_path(photo), method: :delete, confirm: 'Are you sure you want to delete this photo?' %>

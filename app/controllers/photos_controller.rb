@@ -2,13 +2,12 @@ class PhotosController < ApplicationController
   USER_NAME, PASSWORD = "amiel", "andhallie"
 
   before_filter :authenticate, :only => [ :edit, :unapproved, :duplicates, :destroy ]
-
+  before_filter :find_tag
 
   protect_from_forgery :except => [:create]
 
   def index
     @photos = Photo.approved.page(params[:page] || 1).per(42)
-    # session[:most_recent_tag] = nil
   end
 
   def new
@@ -17,14 +16,11 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    @tag = @photo.tags.new
-
-    # Set up breadcrumb link back to album
-    @breadcrumb_tag = Tag.find(session[:most_recent_tag]) if session[:most_recent_tag]
+    # @tag_for_form = @photo.tags.new
 
     if @photo
       # Get the next and previous photos in this set
-      @photos = (@breadcrumb_tag.try(:photos) || Photo).approved.all
+      @photos = (@tag.try(:photos) || Photo).approved.all
       index = @photos.index(@photo)
       if index
         @previous_photo = @photos[index - 1] if index > 0
@@ -111,5 +107,9 @@ class PhotosController < ApplicationController
         authenticate_or_request_with_http_basic do |user_name, password|
           user_name == USER_NAME && password == PASSWORD
         end
+      end
+
+      def find_tag
+        @tag = Tag.find(params[:tag_id]) if params[:tag_id]
       end
 end

@@ -1,4 +1,4 @@
-<h2><%= link_to 'Photo Albums', albums_path %> <% if @breadcrumb_tag %>&rsaquo; <%= link_to @breadcrumb_tag, @breadcrumb_tag %> <% end %>&rsaquo; View Photo</h2>
+<h2><%= link_to 'Photo Albums', albums_path %> <% if @tag %>&rsaquo; <%= link_to @tag, @tag %> <% end %>&rsaquo; View Photo</h2>
 
 
 
@@ -15,20 +15,19 @@
 
   <section class="tags">
     <ul class="tags">
-    <% @photo.tags.each { |tag|
-      next if tag.new_record?%>
-      <li class="tag" id="<%=dom_id(tag)%>"><%=link_to(tag, tag)%></li>
+    <% @photo.tags.reject { |tag| tag.new_record? }.each { |tag| %>
+      <li class="tag" id="<%= dom_id(tag) %>"><%= link_to(tag, tag) %></li>
     <% } %>
     </ul>
     <%=semantic_form_for [@photo] do |f| %>
       <a href="#" id="tagging_toggle">Help us categorize this photo</a>
-      <%=f.inputs do %>
+      <%= f.inputs do %>
         <%= f.input :tags, as: :select, multi: true, label: "Update Albums", collection: Tag.all %>
         <li id="tag_submit">
           <button type="submit">Update</button>
         </li>
       <% end %>
-     <% end %>
+    <% end %>
   </section>
 
 </section>

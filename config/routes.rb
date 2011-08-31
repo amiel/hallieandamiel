@@ -1,7 +1,9 @@
 Hallieandamiel::Application.routes.draw do
-  resources :tags
+  resources :tags do
+    resources :photos
+  end
 
-  resources :photos do |pho| #sho
+  resources :photos do |pho| # sho
     resources :tags
     collection do
       get :unapproved

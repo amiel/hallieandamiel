@@ -10,6 +10,7 @@ There are <%= @duplicates.size %> Duplicates.
   <section class="metadata">
 
     <section class="tags">
+      <h4>Tags</h4>
       <ul class="tags">
       <% photo.tags.each { |tag| %>
         <li class="tag" id="<%=dom_id(tag)%>"><%= tag %></li>
@@ -18,6 +19,9 @@ There are <%= @duplicates.size %> Duplicates.
     </section>
 
     <dl>
+      <dt>ID</dt>
+      <dd><%= photo.id %></dd>
+
       <dt>File Name</dt>
       <dd><%= photo.photo_file_name %></dd>
 

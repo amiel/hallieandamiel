@@ -75,9 +75,15 @@ class PhotosController < ApplicationController
     #               collect { |file_name, count| Photo.all :conditions => { :photo_file_name => file_name } }
 
     @duplicates = counts.select { |file_name, count| count > 1 }
-    file_name = @duplicates.first.first
-    @duplicate = Photo.all :conditions => { :photo_file_name => file_name }
+    @duplicates.each { |file_name, count|
+      duplicate = Photo.all :conditions => { :photo_file_name => file_name }
 
+      # Make sure the duplicates have the same file size
+      duplicate = duplicate.select { |d| d.photo_file_size == duplicate.first.photo_file_size }
+      next if duplicate.size < 2
+
+      @duplicate = duplicate
+    }
   end
 
   def update

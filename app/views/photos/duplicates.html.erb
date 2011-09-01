@@ -1,41 +1,46 @@
 <h2>Duplicate Photos</h2>
 
-There are <%= @duplicates.size %> Duplicates.
+<% if @duplicate.nil? %>
+  <div class="no-content">
+    No duplicates were found.
+  </div>
+<% else %>
 
-<% @duplicate.each do |photo| %>
+  <% @duplicate.each do |photo| %>
 
-  <%= image_tag photo.photo.url(:full), class: 'full_photo' %>
-  <%= link_to 'Delete this photo', photo_path(photo), method: :delete, confirm: 'Are you sure you want to delete this photo?' %>
+    <%= image_tag photo.photo.url(:full), class: 'full_photo' %>
+    <%= link_to 'Delete this photo', photo_path(photo), method: :delete, confirm: 'Are you sure you want to delete this photo?' %>
 
-  <section class="metadata">
+    <section class="metadata">
 
-    <section class="tags">
-      <h4>Tags</h4>
-      <ul class="tags">
-      <% photo.tags.each { |tag| %>
-        <li class="tag" id="<%=dom_id(tag)%>"><%= tag %></li>
-      <% } %>
-      </ul>
+      <section class="tags">
+        <h4>Tags</h4>
+        <ul class="tags">
+        <% photo.tags.each { |tag| %>
+          <li class="tag" id="<%=dom_id(tag)%>"><%= tag %></li>
+        <% } %>
+        </ul>
+      </section>
+
+      <dl>
+        <dt>ID</dt>
+        <dd><%= photo.id %></dd>
+
+        <dt>File Name</dt>
+        <dd><%= photo.photo_file_name %></dd>
+
+        <dt>Uploader name</dt>
+        <dd><%= photo.uploader_name %></dd>
+
+        <dt>Uploader ip</dt>
+        <dd><%= photo.uploader_ip %></dd>
+
+        <dt>File size</dt>
+        <dd><%= photo.photo_file_size %></dd>
+
+        <dt>Uploaded at</dt>
+        <dd><%= photo.created_at %></dd>
+      </dl>
     </section>
-
-    <dl>
-      <dt>ID</dt>
-      <dd><%= photo.id %></dd>
-
-      <dt>File Name</dt>
-      <dd><%= photo.photo_file_name %></dd>
-
-      <dt>Uploader name</dt>
-      <dd><%= photo.uploader_name %></dd>
-
-      <dt>Uploader ip</dt>
-      <dd><%= photo.uploader_ip %></dd>
-
-      <dt>File size</dt>
-      <dd><%= photo.photo_file_size %></dd>
-
-      <dt>Uploaded at</dt>
-      <dd><%= photo.created_at %></dd>
-    </dl>
-  </section>
+  <% end %>
 <% end %>

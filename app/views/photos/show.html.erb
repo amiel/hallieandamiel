@@ -2,8 +2,8 @@
 
 
 
-<div class="next"><%= link_to 'Next', @next_photo if @next_photo %></div>
-<div class="previous"><%= link_to 'Previous', @previous_photo if @previous_photo %></div>
+<div class="next"><%= link_to 'Next', [@tag, @next_photo] if @next_photo %></div>
+<div class="previous"><%= link_to 'Previous', [@tag, @previous_photo] if @previous_photo %></div>
 
 <%= image_tag @photo.photo.url(:full), class: 'full_photo' %>
 

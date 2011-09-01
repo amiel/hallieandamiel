@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   USER_NAME, PASSWORD = "amiel", "andhallie"
 
-  before_filter :authenticate, :only => [ :edit, :unapproved, :duplicates, :destroy ]
+  before_filter :authenticate, :only => [ :edit, :unapproved, :approve, :duplicates, :destroy ]
   before_filter :find_tag
 
   protect_from_forgery :except => [:create]
@@ -58,7 +58,6 @@ class PhotosController < ApplicationController
 
   def unapproved
     @photos = Photo.unapproved.page(params[:page] || 1).per(100)
-    render :index
   end
 
   def edit
@@ -90,6 +89,14 @@ class PhotosController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def approve
+    params[:approve].each do |id|
+      Photo.find(id).update_attribute :approved, true
+    end
+
+    redirect_to unapproved_photos_path
   end
 
   def destroy

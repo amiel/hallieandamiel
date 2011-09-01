@@ -8,6 +8,7 @@ Hallieandamiel::Application.routes.draw do
     collection do
       get :unapproved
       get :duplicates
+      post :approve
     end
   end
 

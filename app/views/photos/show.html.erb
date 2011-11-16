@@ -22,7 +22,7 @@
     <%=semantic_form_for [@photo] do |f| %>
       <a href="#" id="tagging_toggle">Help us categorize this photo</a>
       <%= f.inputs do %>
-        <%= f.input :tags, as: :select, multi: true, label: "Update Albums", collection: Tag.all %>
+        <%= f.input :tags, as: :select, multi: true, label: "Update Albums", collection: Tag.non_user.all %>
         <li id="tag_submit">
           <button type="submit">Update</button>
         </li>

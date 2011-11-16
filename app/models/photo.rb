@@ -14,7 +14,7 @@ class Photo < ActiveRecord::Base
   scope :approved, where(:approved => true)
   scope :unapproved, where(:approved => false)
 
-  after_create :tag_uploader
+  after_save :tag_uploader
 
   validates_presence_of :photo
   validates_format_of :uploader_email, :with => /^\w(\.?[\w-])*@\w(\.?[\w-])*\.[a-z]{2,6}$/i, :allow_blank => true
@@ -30,7 +30,7 @@ class Photo < ActiveRecord::Base
   def tag_uploader
     if uploader_name and not uploader_name.blank? then
       t = Tag.find_or_create_by_tag_and_category(sanitized_uploader_name, 'user')
-      t.taggings.create(:photo=>self)
+      t.taggings.create(:photo => self) unless tags.include?(t)
     end
   end
 end

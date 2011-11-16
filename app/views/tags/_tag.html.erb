@@ -1,6 +1,10 @@
-<% if tag.photos.approved.count > 0 %>
+<% time = Time.current %>
+<%- collection = tag.photos.approved.all -%>
+<% puts "DEBUG TIME: #{ Time.current - time }" %>
+
+<% if collection.size > 0 %>
   <li class="album">
-    <%= link_to image_tag(tag.photos.approved.sample.photo.url(:thumbnail), alt: 'tag'), tag %>
+    <%= link_to image_tag(collection.first.photo.url(:thumbnail), alt: 'tag'), tag %>
     <%= link_to tag, tag %>
   </li>
 <% end %>

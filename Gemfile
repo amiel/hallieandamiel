@@ -6,7 +6,6 @@ gem 'rake', '0.8.7'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'pg'
 
 
@@ -32,6 +31,8 @@ gem 'aws-s3'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group 'development' do
+  gem 'sqlite3'
+
   gem 'heroku'
   gem 'taps'
 end

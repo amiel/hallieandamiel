@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0'
 gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
@@ -21,8 +21,6 @@ gem 'paperclip'
 gem 'formtastic'
 gem 'kaminari'
 gem 'aws-s3'
-
-gem 'therubyracer-heroku', '0.8.1.pre3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

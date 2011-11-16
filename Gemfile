@@ -6,7 +6,7 @@ gem 'rake', '0.8.7'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'     
+gem 'sqlite3'
 gem 'pg'
 
 
@@ -20,7 +20,7 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'formtastic'
 gem 'kaminari'
-gem 'aws-s3'       
+gem 'aws-s3'
 
 gem 'therubyracer-heroku', '0.8.1.pre3'
 
@@ -32,6 +32,11 @@ gem 'therubyracer-heroku', '0.8.1.pre3'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+group 'development' do
+  gem 'heroku'
+  gem 'taps'
+end
 
 group :test do
   # Pretty printed test output

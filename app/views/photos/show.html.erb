@@ -2,10 +2,10 @@
 
 
 
-<div class="next"><%= link_to 'Next', [@tag, @next_photo] if @next_photo %></div>
-<div class="previous"><%= link_to 'Previous', [@tag, @previous_photo] if @previous_photo %></div>
+<div class="next"><%= link_to 'Next', polymorphic_path([@tag, @next_photo], hide_header: params[:hide_header], anchor: 'photos_show') if @next_photo %></div>
+<div class="previous"><%= link_to 'Previous', polymorphic_path([@tag, @previous_photo], hide_header: params[:hide_header], anchor: 'photos_show') if @previous_photo %></div>
 
-  <%= link_to_if @next_photo, image_tag(@photo.photo.url(:full), class: 'full_photo'), [@tag, @next_photo] %>
+  <%= link_to_if @next_photo, image_tag(@photo.photo.url(:full), class: 'full_photo'), polymorphic_path([@tag, @next_photo], hide_header: params[:hide_header], anchor: 'photos_show') %>
 
 <section class="metadata">
 

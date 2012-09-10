@@ -13,6 +13,14 @@
     Want a print? <%= link_to 'Download the full-sized version', @photo.photo.url %>.
   </p>
 
+  <p>
+    <% if params[:hide_header] %>
+      <%= link_to 'show header', '?' %>
+    <% else %>
+      <%= link_to 'Hide header', '?hide_header=true' %>
+    <% end %>
+  </p>
+
   <section class="tags">
     <ul class="tags">
     <% @photo.tags.reject { |tag| tag.new_record? }.each { |tag| %>

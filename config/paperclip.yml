@@ -1,8 +1,8 @@
 production:
-    access_key_id: AKIAJIZX45RMOE5BULLQ
-    secret_access_key: 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
+    access_key_id: ENV['AWS_ACCESS_KEY_ID']
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     bucket: hallieandamiel
 development:
-    access_key_id: AKIAJIZX45RMOE5BULLQ
-    secret_access_key: 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
+    access_key_id: ENV['AWS_ACCESS_KEY_ID']
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     bucket: hallieandamiel-dev

@@ -31,6 +31,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(params[:photo])
+    @photo.approved = true
     @photo.uploader_ip = request.remote_ip
 
     if @photo.save then

@@ -28,11 +28,12 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.find_or_create_by_tag(params[:tag][:tag]) # BIG BUG: case-insensitive
+
     if params[:photo_id] then
       @photo = Photo.find(params[:photo_id])
       @tagging = Tagging.create({
         :tag => @tag,
-        :photo => @photo
+        :photo => @photo,
       })
 
       redirect_to @photo

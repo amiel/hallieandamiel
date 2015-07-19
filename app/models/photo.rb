@@ -8,17 +8,18 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :photo, :styles => { :full => "900x960>", :thumbnail => "100x100#" },
     :storage => :s3,
-    :s3_credentials => YAML.load_file(Rails.root.join('config/paperclip.yml'))[Rails.env],
-    :bucket => YAML.load_file(Rails.root.join('config/paperclip.yml'))[Rails.env]['bucket'],
+    :s3_credentials => {
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      bucket: 'mcgeefamilyreunion',
+    },
+    bucket: 'mcgeefamilyreunion',
     :s3_headers => {'Expires' => 1.year.from_now.httpdate }
-
 
   validates_attachment_file_name :photo, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 
   # validates_attachment :photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   # do_not_validate_attachment_file_type :photo
-
-
 
   scope :approved, where(:approved => true)
   scope :unapproved, where(:approved => false)

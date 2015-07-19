@@ -1,6 +1,6 @@
 <h2>Add Your Photos</h2>
 
-<p>We're happy you were able to join us for the wedding, and thankful you feel like sharing your photos with the world! Once we add your photos, everyone will be able to enjoy them.</p>
+<p>Once we add your photos, everyone will be able to enjoy them.</p>
 
 <%=semantic_form_for @photo, :html => { :multipart => true } do |f| %>
 	<ul class="errors">
@@ -11,7 +11,7 @@
 
 		<%=f.input :photo, :hint => "Browse for the photos you'd like to add" %>
 	<% end %>
-	
+
     <%= f.buttons do %>
       <button type="submit">Finish and Upload</button>
     <% end %>
@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="/javascripts/jquery.uploadify.js"></script>
 	<script type="text/javascript">
 	var upload_errors = [];
-	
+
 	$(function() {
 	  $('#photo_photo').uploadify({
 	    'swf'  : '/uploadify.swf',
@@ -31,8 +31,8 @@
 		'checkExisting': false,
 		'removeCompleted': true,
 	    'auto'      : false,
-		'requeueErrors' : false, 
-		'multi' : true,    
+		'requeueErrors' : false,
+		'multi' : true,
 		'buttonText' : 'Select Photos',
 		'buttonImage': '',
 		'fileObjName' : 'photo[photo]',
@@ -58,21 +58,21 @@
 			}
 		}
 	  });
-	
+
 		$('#new_photo').submit(function() {
-			
+
 			upload_errors = [];
-			
+
 			$('#photo_photo').uploadifySettings('postData',{
 					'photo[uploader_name]' : $('#photo_uploader_name').val(),
 					'photo[uploader_email]' : $('#photo_uploader_email').val()
 			});
-			
+
 			$('#photo_photo').uploadifyUpload();
 			// TODO: disable the buttons here, but only if there's photos in the queue
 			return false;
 		});
-	
+
 	});
 	</script>
 <% end %>

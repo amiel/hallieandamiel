@@ -31,29 +31,25 @@
   <img class="bg" src="/images/murphy_dome.jpg" />
   <div id="wrapper">
 
-  <header class="<%= 'hide' if params[:hide_header] %>">
-    <h1>The McGee Family Reunion</h1>
-    <nav>
-      <ul>
-        <li><a href="<%= albums_path %>" class="current">Photos</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="<%= 'hide' if params[:hide_header] %>">
+      <h1>The McGee Family Reunion</h1>
+      <nav>
+        <ul>
+          <li><a href="<%= albums_path %>" class="current">Photos</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <% if flash[:notice] %>
-  <section class="flash notice">
-    <%= flash[:notice] %>
-  </section>
-  <% end %>
+    <% if flash[:notice] %>
+    <section class="flash notice">
+      <%= flash[:notice] %>
+    </section>
+    <% end %>
 
-  <section class="body" id="<%=controller.controller_name%>_<%=controller.action_name%>">
-    <%= yield %>
-  </section>
+    <section class="body" id="<%=controller.controller_name%>_<%=controller.action_name%>">
+      <%= yield %>
+    </section>
 
-    <footer>
-      <a href="mailto:&#097;&#109;&#105;&#101;&#108;&#046;&#109;&#097;&#114;&#116;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#097;&#109;&#105;&#101;&#108;&#046;&#109;&#097;&#114;&#116;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a> |
-      <a href="mailto:&#102;&#105;&#110;&#100;&#104;&#097;&#108;&#108;&#105;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#102;&#105;&#110;&#100;&#104;&#097;&#108;&#108;&#105;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
-    </footer>
   </div>
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>

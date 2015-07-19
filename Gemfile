@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'formtastic'
 gem 'kaminari'
-gem 'aws-s3'
+gem 'aws-sdk'
 
 # Use unicorn as the web server
 # gem 'unicorn'

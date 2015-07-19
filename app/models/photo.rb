@@ -11,8 +11,7 @@ class Photo < ActiveRecord::Base
     :s3_credentials => Rails.root.join('config/paperclip.yml'),
     :s3_headers => {'Expires' => 1.year.from_now.httpdate }
 
-  validates_attachment :photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
-
+  validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 
   scope :approved, where(:approved => true)
   scope :unapproved, where(:approved => false)

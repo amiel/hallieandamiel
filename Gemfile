@@ -17,6 +17,10 @@ group :assets do
   gem 'uglifier'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'jquery-rails'
 gem 'paperclip'
 gem 'formtastic'

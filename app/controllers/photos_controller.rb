@@ -111,13 +111,13 @@ class PhotosController < ApplicationController
   end
 
   private
-      def authenticate
-        authenticate_or_request_with_http_basic do |user_name, password|
-          user_name == USER_NAME && password == PASSWORD
-        end
+    def authenticate
+      authenticate_or_request_with_http_basic do |user_name, password|
+        user_name == USER_NAME && password == PASSWORD
       end
+    end
 
-      def find_tag
-        @tag = Tag.find(params[:tag_id]) if params[:tag_id]
-      end
+    def find_tag
+      @tag = Tag.find(params[:tag_id]) if params[:tag_id]
+    end
 end

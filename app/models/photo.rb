@@ -30,11 +30,7 @@ class Photo < ActiveRecord::Base
   validates_format_of :uploader_email, :with => /^\w(\.?[\w-])*@\w(\.?[\w-])*\.[a-z]{2,6}$/i, :allow_blank => true
 
   def sanitized_uploader_name
-    if (uploader_name.match(/(.* \w)/)) then
-      $1 + '.'
-    else
-      uploader_name
-    end
+    "By #{uploader_name}"
   end
 
   def tag_uploader

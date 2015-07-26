@@ -4,7 +4,7 @@
 <h2>Photo Albums</h2>
 
 <% if @tags.size > 0 then %>
-  <% @tags.group_by(&:category).each do |category, tags| %>
+  <% @categories.each do |category, tags| %>
     <h4><%= title_for_category category %></h4>
     <ul class="thumbnails">
       <%= render tags.shuffle %>

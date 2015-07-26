@@ -1,13 +1,19 @@
 class TagsController < ApplicationController
 
+  CATEGORY_SORT_MAP = { nil => 1, 'user' => 0, 'person' => 2 }
+
   def index
     if params[:photo_id] then
       @tags = Photo.find(params[:photo_id]).tags
     elsif params[:term] then
-      @tags = Tag.where(['tag like ?',params[:term] + '%'])
+      @tags = Tag.where(['tag like ?', params[:term] + '%'])
     else
       @tags = Tag.all
     end
+
+    @categories = @tags.group_by(&:category).sort_by { |category, tags|
+      CATEGORY_SORT_MAP[category]
+    }
 
     session[:most_recent_tag] = nil
 

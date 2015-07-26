@@ -3,6 +3,6 @@
 <% if collection.size > 0 %>
   <li class="album">
     <%= link_to image_tag(collection.sample.photo.url(:thumbnail), alt: 'tag'), tag %>
-    <%= link_to tag, tag %>
+    <%= link_to tag.tag, tag %>
   </li>
 <% end %>

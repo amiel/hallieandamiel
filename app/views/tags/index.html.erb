@@ -7,7 +7,7 @@
   <% @tags.group_by(&:category).each do |category, tags| %>
     <h4><%= title_for_category category %></h4>
     <ul class="thumbnails">
-      <%= render tags %>
+      <%= render tags.shuffle %>
     </ul>
   <% end %>
 <% else %>

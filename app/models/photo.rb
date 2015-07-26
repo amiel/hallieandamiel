@@ -17,8 +17,6 @@ class Photo < ActiveRecord::Base
     :s3_headers => {'Expires' => 1.year.from_now.httpdate }
 
   validates_attachment_file_name :photo, :matches => [/png\Z/i, /jpe?g\Z/i, /gif\Z/i]
-
-  # validates_attachment :photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   # do_not_validate_attachment_file_type :photo
 
   scope :approved, where(:approved => true)
@@ -30,13 +28,19 @@ class Photo < ActiveRecord::Base
   validates_format_of :uploader_email, :with => /^\w(\.?[\w-])*@\w(\.?[\w-])*\.[a-z]{2,6}$/i, :allow_blank => true
 
   def sanitized_uploader_name
-    "By #{uploader_name}"
+    old_style = Tag.find_by_tag_and_category("By #{uploader_name}", 'user')
+
+    if old_style
+      old_style.tag
+    else
+      uploader_name
+    end
   end
 
   def tag_uploader
-    if uploader_name and not uploader_name.blank? then
+    if uploader_name.present?
       t = Tag.find_or_create_by_tag_and_category(sanitized_uploader_name, 'user')
-      t.taggings.create(:photo => self) unless tags.include?(t)
+      t.taggings.create(photo: self) unless tags.include?(t)
     end
   end
 end

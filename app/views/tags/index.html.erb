@@ -7,12 +7,10 @@
   <% @categories.each do |category, tags| %>
     <h4><%= title_for_category category %></h4>
     <ul class="thumbnails">
-      <%= render tags.shuffle %>
+      <%= render tags.sort_by(&:tag) %>
     </ul>
   <% end %>
 <% else %>
-
-  <div class="no-content">Unfortunately, nobody's uploaded any photos yet. Why not <%=link_to 'upload your own?', new_photo_path %></div>
-
+  <div class="no-content">Unfortunately, nobody's uploaded any photos yet. Why not <%= link_to 'upload your own?', new_photo_path %></div>
 <% end %>
 <%= link_to 'Add Your Photos', new_photo_path, class: 'button' %>

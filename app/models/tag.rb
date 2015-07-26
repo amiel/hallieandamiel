@@ -3,7 +3,8 @@ class Tag < ActiveRecord::Base
   has_many :taggings
   has_many :photos, :through => :taggings
 
-  scope :non_user, where('category != ?', 'user')
+  scope :people, where(category: 'person').order('tag ASC')
+  scope :other, where(category: nil).order('tag ASC')
 
   def to_s
     self.tag

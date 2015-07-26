@@ -1,7 +1,11 @@
-<h2><%= link_to 'Photo Albums', albums_path %> &rsaquo; <%= @tag %></h2>
+<% if @tag.photographer? %>
+  <h2><%= link_to 'Photographers', albums_path %> &rsaquo; <%= @tag.tag %></h2>
+<% else %>
+  <h2><%= link_to 'Photo Albums', albums_path %> &rsaquo; <%= @tag %></h2>
+<% end %>
 
 <ul class="thumbnails">
   <%= render @photos %>
 </ul>
 
-<%= paginate @photos %>  
+<%= paginate @photos %>

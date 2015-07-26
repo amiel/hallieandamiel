@@ -1,4 +1,4 @@
-<h2><%= link_to 'Photo Albums', albums_path %> <% if @tag %>&rsaquo; <%= link_to @tag, @tag %> <% end %>&rsaquo; View Photo</h2>
+<h2><%= render 'breadcrumbs' %>&rsaquo; View Photo</h2>
 
 <div class="next"><%= link_to 'Next', polymorphic_path([@tag, @next_photo], hide_header: params[:hide_header], anchor: 'photos_show') if @next_photo %></div>
 <div class="previous"><%= link_to 'Previous', polymorphic_path([@tag, @previous_photo], hide_header: params[:hide_header], anchor: 'photos_show') if @previous_photo %></div>

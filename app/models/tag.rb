@@ -10,6 +10,10 @@ class Tag < ActiveRecord::Base
     category == 'user'
   end
 
+  def person?
+    category == 'person'
+  end
+
   def to_s
     if photographer?
       "Photographer: #{tag}"

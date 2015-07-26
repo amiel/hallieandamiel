@@ -4,6 +4,8 @@ module TagsHelper
     case category
     when 'user'
       'By Photographer'
+    when 'person'
+      'By Person'
     else
       'By Category'
     end

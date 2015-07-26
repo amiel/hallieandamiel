@@ -15,8 +15,6 @@ class TagsController < ApplicationController
       format.html {}
       format.json { render :json => @tags.collect(&:tag) }
     end
-
-
   end
 
   def show

@@ -16,7 +16,7 @@ class Photo < ActiveRecord::Base
     bucket: 'mcgeefamilyreunion',
     :s3_headers => {'Expires' => 1.year.from_now.httpdate }
 
-  validates_attachment_file_name :photo, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
+  validates_attachment_file_name :photo, :matches => [/png\Z/i, /jpe?g\Z/i, /gif\Z/i]
 
   # validates_attachment :photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   # do_not_validate_attachment_file_type :photo
